@@ -17,4 +17,5 @@ Route::get('/', function () {
     return 'hello world';
 });
 
-Route::get('/my_page', 'MyFirstController@index' );
+Route::get('/posts', 'PostController@index');
+Route::get('/posts/create', 'PostController@create');
