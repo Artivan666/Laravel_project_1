@@ -19,6 +19,19 @@
       <input type="text" name="image" value='{{ $post->image }}' id="">
       </div>
 
+      <div>
+        <label for="category">Category</label>
+        <select name="category_id" id="category">
+          @foreach($categories as $category)
+          
+          <option
+            {{ $category->id === $post->category_id ? ' selected' : '' }} 
+            value="{{ $category->id }}">{{ $category->title }}
+          </option>
+          @endforeach
+        </select>
+      </div>
+
       <div><button type="submit">Update</button></div>
     </form>
   </div>

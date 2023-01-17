@@ -18,6 +18,16 @@
       <input type="text" name="image" id="">
       </div>
 
+      <div>
+        <label for="category">Category</label>
+        <select name="category_id" id="category">
+          <option value="">-------</option>
+          @foreach($categories as $category)
+          <option value="{{ $category->id }}">{{ $category->title }}</option>
+          @endforeach
+        </select>
+      </div>
+
       <div><button type="submit">Create post</button></div>
     </form>
   </div>
