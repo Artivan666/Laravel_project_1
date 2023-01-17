@@ -28,6 +28,15 @@
         </select>
       </div>
 
+      <div>
+        <label for="tags">Tags</label>
+        <select multiple name="tags[]" id="tags">
+          @foreach($tags as $tag)
+            <option value="{{ $tag->id }}">{{ $tag->title }}</option>
+          @endforeach
+        </select>
+      </div>
+
       <div><button type="submit">Create post</button></div>
     </form>
   </div>
