@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\Tag;
 
-class CreateController extends Controller
+class CreateController extends BaseController
 {
     // как только из роута обратимся к этому классу,
     // первое что произойдет, будет запущен это метод
