@@ -32,6 +32,19 @@
         </select>
       </div>
 
+      <div>
+        <label for="tags">Tags</label>
+        <select multiple name="tags[]" id="tags">
+          @foreach($tags as $tag)
+            <option
+              @foreach($post->tags as $postTag)
+                {{ $tag->id === $postTag->id ? ' selected' : '' }}
+              @endforeach
+             value="{{ $tag->id }}">{{ $tag->title }}</option>
+          @endforeach
+        </select>
+      </div>
+
       <div><button type="submit">Update</button></div>
     </form>
   </div>
