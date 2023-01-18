@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Post;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\StoreRequest;
 use App\Post;
 use App\Tag;
 
@@ -11,15 +12,9 @@ class StoreController extends Controller
 {
     // как только из роута обратимся к этому классу,
     // первое что произойдет, будет запущен это метод
-    public function __invoke()
+    public function __invoke(StoreRequest $request)
     {
-        $data = request()->validate([
-            'title' => 'required | string',
-            'content' => 'required | string',
-            'image' => 'string',
-            'category_id' => '',
-            'tags' => ''
-        ]);
+        $data = $request->validated();
         $tags = $data['tags'];
         unset($data['tags']);
         
