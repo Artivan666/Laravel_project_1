@@ -11,7 +11,7 @@ class IndexController extends Controller
     // первое что произойдет, будет запущен это метод
     public function __invoke()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(3);
         return view('post.index', compact('posts'));
     }
 }
