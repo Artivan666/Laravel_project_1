@@ -2,10 +2,13 @@
 
 namespace App;
 
+use App\Models\Traits\Filterable;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    use Filterable;
+
     protected $guarded = false;
 
     public function category() {
